@@ -20,8 +20,6 @@ import {
 } from "@/components/ui/select"
 import { getNewClearId } from "@/lib/utils";
 import { generateClient } from "aws-amplify/api";
-import { Amplify } from 'aws-amplify';
-import amplifyconfig from '../../../../../../amplify_outputs.json';
 import { listUsers, listIndividualRegistrations } from "@/graphql/queries";
 import { createUser as createUserMutation, createIndividualRegistration as createIndividualRegistrationMutation } from "@/graphql/mutations";
 
@@ -57,7 +55,7 @@ const EventsSchema = z.object({
 
 const FullSchema = PersonalSchema.merge(CollegeSchema).merge(EventsSchema);
 
-after: type FormValues = z.infer<typeof FullSchema>;
+type FormValues = z.infer<typeof FullSchema>;
 
 // Keep school & events data unchanged
 const SCHOOLS = [
@@ -93,9 +91,6 @@ function SimpleToast({ message }: { message: string }) {
 }
 
 export default function IndividualRegister() {
-  useEffect(() => {
-    Amplify.configure(amplifyconfig);
-  }, []);
 
   const steps = ["Personal", "College", "Events", "Confirm"];
   const [step, setStep] = useState(0);

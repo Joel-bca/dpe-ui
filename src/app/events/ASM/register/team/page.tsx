@@ -1,6 +1,8 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import { Amplify } from 'aws-amplify';
+import amplifyconfig from '../../../../../../amplify_outputs.json';
 import RegisterLayout from "@/app/events/ASM/register/layout";
 import { useForm, useFieldArray } from "react-hook-form";
 import { z } from "zod";
@@ -74,6 +76,10 @@ function SimpleToast({ message }: { message: string }) {
 }
 
 export default function TeamRegister() {
+  useEffect(() => {
+    Amplify.configure(amplifyconfig);
+  }, []);
+
   const steps = ["Team", "Captain", "Players", "Confirm"];
   const [step, setStep] = useState(0);
   const [toast, setToast] = useState<string | null>(null);
@@ -191,7 +197,7 @@ export default function TeamRegister() {
               regNumber: data.captain.registrationNumber,
               christGmail: data.captain.email,
               phoneNumber: captainFormattedPhone,
-              deptShort: "PE",
+              deptShort: data.captain.department,
               schoolShort: data.captain.school,
               educationLevel: data.captain.educationLevel,
             }
@@ -248,7 +254,7 @@ export default function TeamRegister() {
                 regNumber: member.registrationNumber,
                 christGmail: member.email,
                 phoneNumber: memberFormattedPhone,
-                deptShort: "PE",
+                deptShort: member.department,
                 schoolShort: member.school,
                 educationLevel: member.educationLevel,
               }
