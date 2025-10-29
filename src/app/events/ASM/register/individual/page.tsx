@@ -36,7 +36,7 @@ const CollegeSchema = z.object({
   collegeEmail: z.string().email("Enter a valid college email"),
   school: z.string().min(1, "Select your school"),
   department: z.string().min(1, "Enter department shortform"),
-  educationLevel: z.enum(["UG", "PG"], "Select UG or PG"),
+  educationLevel: z.enum(["UG", "PG", "PHD"], "Select UG, PG or PHD"),
 });
 
 const EventsSchema = z.object({
@@ -330,13 +330,14 @@ export default function IndividualRegister() {
                 <Field>
                   <FieldLabel>Education Level *</FieldLabel>
                   <FieldContent>
-                    <Select onValueChange={(value) => methods.setValue("educationLevel", value as "UG" | "PG", { shouldValidate: true })} value={watched.educationLevel}>
+                    <Select onValueChange={(value) => methods.setValue("educationLevel", value as "UG" | "PG" | "PHD", { shouldValidate: true })} value={watched.educationLevel}>
                       <SelectTrigger className={`w-full ${formState.errors.educationLevel ? "border-red-400" : ""}`}>
                         <SelectValue placeholder="Select UG or PG" />
                       </SelectTrigger>
                       <SelectContent>
                         <SelectItem value="UG">UG</SelectItem>
                         <SelectItem value="PG">PG</SelectItem>
+                        <SelectItem value="PhD">PhD</SelectItem>
                       </SelectContent>
                     </Select>
                     <FieldError>{formState.errors.educationLevel?.message as any}</FieldError>

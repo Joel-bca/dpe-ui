@@ -83,35 +83,12 @@ export function Newssection() {
               </div>
               <p className="text-gray-600">{item.description}</p>
             </motion.div>
-          )) : [
-            {
-              title: "ASM Day 1 Highlights",
-              desc: "Thrilling matches across athletics and football; Commerce leads the scoreboard!",
-              icon: <Activity className="text-blue-500 w-6 h-6" />,
-            },
-            {
-              title: "Cricket Finals Scheduled",
-              desc: "Final match set for Dec 14, 3:00 PM between Commerce and Business schools.",
-              icon: <CalendarDays className="text-green-500 w-6 h-6" />,
-            },
-            {
-              title: "Tug of War Championship",
-              desc: "Newly added event! Register by Dec 10, limited slots available.",
-              icon: <Trophy className="text-yellow-500 w-6 h-6" />,
-            },
-          ].map((item, idx) => (
-            <motion.div
-              key={idx}
-              whileHover={{ scale: 1.03 }}
-              className="bg-white rounded-xl p-6 shadow-lg border border-gray-100 transition-all"
-            >
-              <div className="flex items-center gap-3 mb-3">
-                {item.icon}
-                <h3 className="font-semibold text-lg">{item.title}</h3>
-              </div>
-              <p className="text-gray-600">{item.desc}</p>
-            </motion.div>
-          ))}
+          )) : (
+            <div className="col-span-full text-center py-10">
+              <Newspaper className="text-gray-400 w-16 h-16 mx-auto mb-4" />
+              <p className="text-gray-500 text-lg">No news yet.</p>
+            </div>
+          )}
         </div>
       </section>
     );

@@ -42,10 +42,7 @@ export default function ASMPage() {
             excellence and teamwork.
           </p>
           <div className="mt-10 flex justify-center gap-4 flex-wrap">
-            <Button
-              variant="outline"
-              className="text-white border-white hover:bg-white hover:text-black transition-all"
-            >
+              <Button className="bg-gradient-to-r from-gray-800 to-gray-600 text-white hover:opacity-90 px-6 py-2 rounded-xl">
               Download Rulebook
             </Button>
           </div>

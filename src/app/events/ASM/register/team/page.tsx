@@ -28,7 +28,7 @@ const TeamMember = z.object({
   phone: z.string().regex(/^[6-9]\d{9}$/, "Enter valid 10-digit Indian mobile number"),
   school: z.string().min(1, "Select school"),
   department: z.string().min(1, "Enter department shortform"),
-  educationLevel: z.enum(["UG", "PG"], "Select UG or PG"),
+  educationLevel: z.enum(["UG", "PG", "PHD"], "Select UG, PG or PHD"),
 });
 
 const TeamSchema = z.object({
