@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 
-const LAMBDA_API_URL = await fetch(process.env.NEXT_PUBLIC_API_URL) // ✅ your invoke URL
+const LAMBDA_API_URL = process.env.NEXT_PUBLIC_API_URL // ✅ your invoke URL
 
 export async function POST(request: NextRequest) {
   try {

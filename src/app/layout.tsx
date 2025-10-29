@@ -4,7 +4,7 @@ import { Nav } from "@/components/navgation";
 import { Footer } from "@/components/footer";
 import "./globals.css";
 import { Amplify } from 'aws-amplify';
-import { Auth } from 'aws-amplify/auth';
+
 import amplifyOutputs from "../../amplify_outputs.json";
 import { Providers } from "./providers";
 

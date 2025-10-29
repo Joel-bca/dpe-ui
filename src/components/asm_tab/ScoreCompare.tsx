@@ -14,8 +14,14 @@ import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ChevronDown } from "lucide-react";
 
+interface SchoolData {
+  school: string;
+  color: string;
+  sports: Record<string, number>;
+}
+
 // 🧠 Dummy Firebase-like data (replace this with Firestore fetch)
-const firebaseData = [
+const firebaseData: SchoolData[] = [
   {
     school: "School of Commerce, Finance and Accountancy",
     color: "#3b82f6",
@@ -84,7 +90,7 @@ export function ScoreCompare() {
 
   // 📊 Prepare chart data dynamically
   const chartData = sportsList.map((sport) => {
-    const entry: any = { sport };
+    const entry: Record<string, number | string> = { sport };
     firebaseData.forEach((school) => {
       entry[school.school] = school.sports[sport] || 0;
     });

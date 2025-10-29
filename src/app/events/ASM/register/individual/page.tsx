@@ -41,7 +41,7 @@ const CollegeSchema = z.object({
 
 const EventsSchema = z.object({
   events: z.array(z.string()).min(1, "Select at least one event").refine((events) => {
-    const selectedEvents = events.map(ev => AVAILABLE_EVENTS.find(e => e.name === ev)).filter(Boolean);
+    const selectedEvents = events.map(ev => AVAILABLE_EVENTS.find(e => e.name === ev)).filter(Boolean) as typeof AVAILABLE_EVENTS;
     const trackCount = selectedEvents.filter(e => e.category === 'track').length;
     const throwCount = selectedEvents.filter(e => e.category === 'throw').length;
     const jumpCount = selectedEvents.filter(e => e.category === 'jump').length;
@@ -178,9 +178,9 @@ export default function IndividualRegister() {
         userClearId = createUserResult.data.createUser.clearId;
       }
 
-      const selectedEvents = data.events.map(eventName => 
+      const selectedEvents = data.events.map(eventName =>
         AVAILABLE_EVENTS.find(ev => ev.name === eventName)
-      ).filter(Boolean);
+      ).filter(Boolean) as typeof AVAILABLE_EVENTS;
 
       for (const ev of selectedEvents) {
         await client.graphql({

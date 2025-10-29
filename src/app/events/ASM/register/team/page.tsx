@@ -538,12 +538,12 @@ export default function TeamRegister() {
               </div>
 
               <div className="mt-4">
-                <button
-                  type="button"
-                  onClick={() => append({ name: "", registrationNumber: "", email: "", phone: "", school: "", educationLevel: "UG" })}
-                  className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gray-900 text-white hover:bg-gray-800 transition"
-                >
-                  + Add Player
+                  <button
+                    type="button"
+                    onClick={() => append({ name: "", registrationNumber: "", email: "", phone: "", school: "", department: "", educationLevel: "UG" })}
+                    className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gray-900 text-white hover:bg-gray-800 transition"
+                  >
+                    + Add Player
                 </button>
               </div>
             </motion.div>
