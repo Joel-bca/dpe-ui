@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import RegisterLayout from  "@/app/events/ASM/register/layout";
+import RegisterLayout from  "@/app/events/ASM/register/registrationlayout";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";

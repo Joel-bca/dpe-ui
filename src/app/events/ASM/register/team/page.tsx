@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from "react";
 import { Amplify } from 'aws-amplify';
 import amplifyconfig from '../../../../../../amplify_outputs.json';
-import RegisterLayout from "@/app/events/ASM/register/layout";
+import RegisterLayout from "@/app/events/ASM/register/registrationlayout";
 import { useForm, useFieldArray } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";

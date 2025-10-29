@@ -9,6 +9,7 @@ import { ChevronLeftIcon, ChevronRightIcon } from "@radix-ui/react-icons";
 type Props = {
   steps: string[];
   currentStep: number;
+  
   children: React.ReactNode;
   caption?: string;
 };
