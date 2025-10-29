@@ -4,6 +4,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { HoverBorderGradient } from "@/components/ui/hover-border-gradient";
 import Link from "next/link";
+import image from "next/image";
 
 // ======= HERO SECTION COMPONENT =======
 export function HeroSection() {
