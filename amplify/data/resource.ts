@@ -10,6 +10,7 @@ const schema = a.schema({
     phoneNumber: a.phone().required(),
     deptShort: a.string().required(),
     schoolShort: a.string().required(),
+    classSection: a.string().required(),
     educationLevel: a.string().required(),
     individualRegistrations: a.hasMany('IndividualRegistration', 'playerClearId'),
     teamCaptained: a.hasMany('Team', 'captainClearId'),

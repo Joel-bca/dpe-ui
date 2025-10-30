@@ -13,12 +13,6 @@ export default function ASMPage() {
       href: "/events/ASM/register/individual",
       icon: <User className="w-8 h-8 text-gray-800" />,
     },
-    {
-      title: "Team Events",
-      desc: "Register your team for group and inter-school competitions.",
-      href: "/events/ASM/register/team",
-      icon: <Users className="w-8 h-8 text-gray-800" />,
-    },
   ];
 
   return (
@@ -88,7 +82,9 @@ export default function ASMPage() {
               </ul>
               (Relay excluded)
             </li>
+            <li><br>All Teams event will be physical registion near T-Juction.</br></li>
             <li>Only one relay team per School is permitted.</li>
+            <li>Mixed relay will be conducted in Kengeri Campus</li>
             <li>
               College ID Cards must be presented during competitions.
             </li>

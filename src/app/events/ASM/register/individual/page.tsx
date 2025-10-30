@@ -36,6 +36,7 @@ const CollegeSchema = z.object({
   collegeEmail: z.string().email("Enter a valid college email"),
   school: z.string().min(1, "Select your school"),
   department: z.string().min(1, "Enter department shortform"),
+  classSection: z.string().min(1, "Enter class and section"),
   educationLevel: z.enum(["UG", "PG", "PHD"], "Select UG, PG or PHD"),
 });
 
@@ -73,8 +74,6 @@ const AVAILABLE_EVENTS = [
   { name: "800m", id: "SIDI04", category: "track" },
   { name: "1500m", id: "SIDI05", category: "track" },
   { name: "3000m", id: "SIDI06", category: "track" },
-  { name: "4x100m", id: "SIDI011", category: "track" },
-  { name: "Mix relay", id: "SIST10", category: "track" },
   { name: "Shot Put", id: "SIDI07", category: "throw" },
   { name: "Discus Throw", id: "SIDI08", category: "throw" },
   { name: "Javelin Throw", id: "SIDI09", category: "throw" },
@@ -107,6 +106,7 @@ export default function IndividualRegister() {
       collegeEmail: "",
       school: "",
       department: "",
+      classSection: "",
       educationLevel: "UG",
       events: [],
       accept: false,
@@ -122,7 +122,7 @@ export default function IndividualRegister() {
   async function next() {
     let ok = false;
     if (step === 0) ok = await trigger(["fullName", "phone"]);
-    if (step === 1) ok = await trigger(["registrationNumber", "collegeEmail", "school", "department", "educationLevel"]);
+    if (step === 1) ok = await trigger(["registrationNumber", "collegeEmail", "school", "department", "classSection", "educationLevel"]);
     if (step === 2) ok = await trigger(["events", "accept"]);
     if (ok) setStep((s) => Math.min(steps.length - 1, s + 1));
     else setToast("Please fix validation errors in this step.");
@@ -324,6 +324,14 @@ export default function IndividualRegister() {
                   <FieldContent>
                     <Input {...register("department")} placeholder="Dept shortform (e.g. 1 BCOM B, 1 BCA B, 1 MCA A)" className={formState.errors.department ? "border-red-400" : ""} />
                     <FieldError>{formState.errors.department?.message as any}</FieldError>
+                  </FieldContent>
+                </Field>
+
+                <Field>
+                  <FieldLabel>Class & Section *</FieldLabel>
+                  <FieldContent>
+                    <Input {...register("classSection")} placeholder="e.g. 1 A" className={formState.errors.classSection ? "border-red-400" : ""} />
+                    <FieldError>{formState.errors.classSection?.message as any}</FieldError>
                   </FieldContent>
                 </Field>
 

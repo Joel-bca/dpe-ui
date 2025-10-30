@@ -49,10 +49,6 @@ export function Footer() {
                 <span>dpe.byc@christuniversity.in</span>
               </div>
               <div className="flex items-center gap-3 hover:text-white transition">
-                <Phone className="w-4 h-4 text-emerald-400" />
-                <span>+91-98765 43210</span>
-              </div>
-              <div className="flex items-center gap-3 hover:text-white transition">
                 <MapPin className="w-4 h-4 text-emerald-400" />
                 <span>Christ University, BYC Campus, Bangalore, India</span>
               </div>

@@ -1,4 +1,3 @@
-- [x] Fix src/components/ui/hover-border-gradient.tsx: Remove unused 'useRef' import, add missing dependencies to useEffect, remove unused 'event' parameter
-- [x] Fix src/components/ui/resizable-navbar.tsx: Remove unused 'onClose' parameter in MobileNavMenu
-- [x] Fix src/components/ui/sticky-scroll-reveal.tsx: Replace 'any' types with React.ReactNode, add 'linearGradients' to useEffect dependencies
-- [ ] Verify build passes after changes
+- [ ] Update amplify/data/resource.ts to add classSection field to User model
+- [ ] Update src/app/events/ASM/register/individual/page.tsx to add Class & Section field in form, validation, and submission
+- [ ] Test the changes (run amplify push if needed for backend deployment)

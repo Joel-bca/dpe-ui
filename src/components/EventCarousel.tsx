@@ -23,8 +23,8 @@ const events = [
       "https://images.unsplash.com/photo-1521412644187-c49fa049e84d?auto=format&fit=crop&w=1600&q=80",
     buttonLink: "/events/ASM",
     status: "Upcoming",
-    date: "Aug 10 - Aug 15, 2025",
-    venue: "Indoor Sports Complex",
+    date: "14th November 2025",
+    venue: "Chirst University",
   },
 ];
 
