@@ -89,6 +89,13 @@
               "isRequired": true,
               "attributes": []
             },
+            "classSection": {
+              "name": "classSection",
+              "isArray": false,
+              "type": "String",
+              "isRequired": true,
+              "attributes": []
+            },
             "educationLevel": {
               "name": "educationLevel",
               "isArray": false,

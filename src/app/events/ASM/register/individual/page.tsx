@@ -170,6 +170,7 @@ export default function IndividualRegister() {
               phoneNumber: formattedPhone,
               deptShort: data.department,
               schoolShort: data.school,
+              classSection: data.classSection,
               educationLevel: data.educationLevel,
             }
           },
