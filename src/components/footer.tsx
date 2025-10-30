@@ -16,6 +16,7 @@ import {
   Camera,
   Stethoscope,
   Megaphone,
+  Handshake,
 } from "lucide-react";
 
 export function Footer() {
@@ -99,6 +100,9 @@ export function Footer() {
               </div>
               <div className="flex items-center gap-2 hover:text-emerald-400 transition">
                 <Megaphone className="w-4 h-4" /> Public Relations
+              </div>
+              <div className="flex items-center gap-2 hover:text-emerald-400 transition">
+                <Handshake className="w-4 h-4" /> Hospitality
               </div>
             </AccordionContent>
           </AccordionItem>
