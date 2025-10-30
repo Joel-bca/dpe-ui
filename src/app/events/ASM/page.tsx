@@ -42,9 +42,9 @@ export default function ASMPage() {
             excellence and teamwork.
           </p>
           <div className="mt-10 flex justify-center gap-4 flex-wrap">
-              <Button className="bg-gradient-to-r from-gray-800 to-gray-600 text-white hover:opacity-90 px-6 py-2 rounded-xl">
+              <a href="/ASM 2025-26.pdf" download="ASM 2025-26.pdf" className="bg-gradient-to-r from-gray-800 to-gray-600 text-white hover:opacity-90 px-6 py-2 rounded-xl inline-block">
               Download Rulebook
-            </Button>
+            </a>
           </div>
         </motion.div>
       </section>
