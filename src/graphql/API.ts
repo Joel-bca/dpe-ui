@@ -11,6 +11,7 @@ export type IndividualRegistration = {
 export type User = {
   __typename: "User",
   christGmail: string,
+  classSection: string,
   clearId: string,
   createdAt: string,
   deptShort: string,
@@ -233,6 +234,7 @@ export type ModelTeamFilterInput = {
 export type ModelUserFilterInput = {
   and?: Array< ModelUserFilterInput | null > | null,
   christGmail?: ModelStringInput | null,
+  classSection?: ModelStringInput | null,
   clearId?: ModelIDInput | null,
   createdAt?: ModelStringInput | null,
   deptShort?: ModelStringInput | null,
@@ -342,6 +344,7 @@ export type CreateTeamInput = {
 export type ModelUserConditionInput = {
   and?: Array< ModelUserConditionInput | null > | null,
   christGmail?: ModelStringInput | null,
+  classSection?: ModelStringInput | null,
   createdAt?: ModelStringInput | null,
   deptShort?: ModelStringInput | null,
   educationLevel?: ModelStringInput | null,
@@ -356,6 +359,7 @@ export type ModelUserConditionInput = {
 
 export type CreateUserInput = {
   christGmail: string,
+  classSection: string,
   clearId: string,
   deptShort: string,
   educationLevel: string,
@@ -424,6 +428,7 @@ export type UpdateTeamInput = {
 
 export type UpdateUserInput = {
   christGmail?: string | null,
+  classSection?: string | null,
   clearId: string,
   deptShort?: string | null,
   educationLevel?: string | null,
@@ -533,6 +538,7 @@ export type ModelSubscriptionTeamFilterInput = {
 export type ModelSubscriptionUserFilterInput = {
   and?: Array< ModelSubscriptionUserFilterInput | null > | null,
   christGmail?: ModelSubscriptionStringInput | null,
+  classSection?: ModelSubscriptionStringInput | null,
   clearId?: ModelSubscriptionIDInput | null,
   createdAt?: ModelSubscriptionStringInput | null,
   deptShort?: ModelSubscriptionStringInput | null,
@@ -561,6 +567,7 @@ export type GetIndividualRegistrationQuery = {
     user?:  {
       __typename: "User",
       christGmail: string,
+      classSection: string,
       clearId: string,
       createdAt: string,
       deptShort: string,
@@ -643,6 +650,7 @@ export type GetTeamQuery = {
     captain?:  {
       __typename: "User",
       christGmail: string,
+      classSection: string,
       clearId: string,
       createdAt: string,
       deptShort: string,
@@ -670,6 +678,7 @@ export type GetUserQuery = {
   getUser?:  {
     __typename: "User",
     christGmail: string,
+    classSection: string,
     clearId: string,
     createdAt: string,
     deptShort: string,
@@ -822,6 +831,7 @@ export type ListUsersQuery = {
     items:  Array< {
       __typename: "User",
       christGmail: string,
+      classSection: string,
       clearId: string,
       createdAt: string,
       deptShort: string,
@@ -852,6 +862,7 @@ export type CreateIndividualRegistrationMutation = {
     user?:  {
       __typename: "User",
       christGmail: string,
+      classSection: string,
       clearId: string,
       createdAt: string,
       deptShort: string,
@@ -938,6 +949,7 @@ export type CreateTeamMutation = {
     captain?:  {
       __typename: "User",
       christGmail: string,
+      classSection: string,
       clearId: string,
       createdAt: string,
       deptShort: string,
@@ -966,6 +978,7 @@ export type CreateUserMutation = {
   createUser?:  {
     __typename: "User",
     christGmail: string,
+    classSection: string,
     clearId: string,
     createdAt: string,
     deptShort: string,
@@ -1002,6 +1015,7 @@ export type DeleteIndividualRegistrationMutation = {
     user?:  {
       __typename: "User",
       christGmail: string,
+      classSection: string,
       clearId: string,
       createdAt: string,
       deptShort: string,
@@ -1088,6 +1102,7 @@ export type DeleteTeamMutation = {
     captain?:  {
       __typename: "User",
       christGmail: string,
+      classSection: string,
       clearId: string,
       createdAt: string,
       deptShort: string,
@@ -1116,6 +1131,7 @@ export type DeleteUserMutation = {
   deleteUser?:  {
     __typename: "User",
     christGmail: string,
+    classSection: string,
     clearId: string,
     createdAt: string,
     deptShort: string,
@@ -1152,6 +1168,7 @@ export type UpdateIndividualRegistrationMutation = {
     user?:  {
       __typename: "User",
       christGmail: string,
+      classSection: string,
       clearId: string,
       createdAt: string,
       deptShort: string,
@@ -1238,6 +1255,7 @@ export type UpdateTeamMutation = {
     captain?:  {
       __typename: "User",
       christGmail: string,
+      classSection: string,
       clearId: string,
       createdAt: string,
       deptShort: string,
@@ -1266,6 +1284,7 @@ export type UpdateUserMutation = {
   updateUser?:  {
     __typename: "User",
     christGmail: string,
+    classSection: string,
     clearId: string,
     createdAt: string,
     deptShort: string,
@@ -1301,6 +1320,7 @@ export type OnCreateIndividualRegistrationSubscription = {
     user?:  {
       __typename: "User",
       christGmail: string,
+      classSection: string,
       clearId: string,
       createdAt: string,
       deptShort: string,
@@ -1383,6 +1403,7 @@ export type OnCreateTeamSubscription = {
     captain?:  {
       __typename: "User",
       christGmail: string,
+      classSection: string,
       clearId: string,
       createdAt: string,
       deptShort: string,
@@ -1410,6 +1431,7 @@ export type OnCreateUserSubscription = {
   onCreateUser?:  {
     __typename: "User",
     christGmail: string,
+    classSection: string,
     clearId: string,
     createdAt: string,
     deptShort: string,
@@ -1445,6 +1467,7 @@ export type OnDeleteIndividualRegistrationSubscription = {
     user?:  {
       __typename: "User",
       christGmail: string,
+      classSection: string,
       clearId: string,
       createdAt: string,
       deptShort: string,
@@ -1527,6 +1550,7 @@ export type OnDeleteTeamSubscription = {
     captain?:  {
       __typename: "User",
       christGmail: string,
+      classSection: string,
       clearId: string,
       createdAt: string,
       deptShort: string,
@@ -1554,6 +1578,7 @@ export type OnDeleteUserSubscription = {
   onDeleteUser?:  {
     __typename: "User",
     christGmail: string,
+    classSection: string,
     clearId: string,
     createdAt: string,
     deptShort: string,
@@ -1589,6 +1614,7 @@ export type OnUpdateIndividualRegistrationSubscription = {
     user?:  {
       __typename: "User",
       christGmail: string,
+      classSection: string,
       clearId: string,
       createdAt: string,
       deptShort: string,
@@ -1671,6 +1697,7 @@ export type OnUpdateTeamSubscription = {
     captain?:  {
       __typename: "User",
       christGmail: string,
+      classSection: string,
       clearId: string,
       createdAt: string,
       deptShort: string,
@@ -1698,6 +1725,7 @@ export type OnUpdateUserSubscription = {
   onUpdateUser?:  {
     __typename: "User",
     christGmail: string,
+    classSection: string,
     clearId: string,
     createdAt: string,
     deptShort: string,
