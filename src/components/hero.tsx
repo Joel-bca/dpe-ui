@@ -11,7 +11,7 @@ export function HeroSection() {
   return (
     <section className="relative h-screen w-full flex items-center justify-center overflow-hidden">
       {/* Background */}
-      <div className="absolute inset-0 bg-[url('static/hero-bg.jpg')] bg-cover bg-center brightness-[0.55]"></div>
+      <div className="absolute inset-0 bg-[url('/static/hero-bg.jpg')] bg-cover bg-center brightness-[0.55]"></div>
       <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70"></div>
 
       {/* Text Content */}
