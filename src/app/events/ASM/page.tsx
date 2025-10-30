@@ -82,7 +82,7 @@ export default function ASMPage() {
               </ul>
               (Relay excluded)
             </li>
-            <li><strong>All Teams event will be physical registion near T-Juction.</strong></li>
+            <li><strong>All Teams event registion will be done registration desk.</strong></li>
             <li>Only one relay team per School is permitted.</li>
             <li>Mixed relay will be conducted in Kengeri Campus</li>
             <li>
@@ -120,6 +120,7 @@ export default function ASMPage() {
             <p className="mt-4 italic text-sm text-gray-600">
               Any error during applying is not the responsibility 
               of the Department of Physical Education.
+              <i>Take your time and fill out the registration carefully.</i>
             </p>
           </div>
         </div>
