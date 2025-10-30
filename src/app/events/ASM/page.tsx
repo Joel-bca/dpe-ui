@@ -82,7 +82,7 @@ export default function ASMPage() {
               </ul>
               (Relay excluded)
             </li>
-            <li><br>All Teams event will be physical registion near T-Juction.</br></li>
+            <li><strong>All Teams event will be physical registion near T-Juction.</strong></li>
             <li>Only one relay team per School is permitted.</li>
             <li>Mixed relay will be conducted in Kengeri Campus</li>
             <li>
