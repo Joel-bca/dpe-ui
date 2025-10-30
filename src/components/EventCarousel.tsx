@@ -16,7 +16,7 @@ import { CalendarDays, MapPin, Activity } from "lucide-react"; // ⬅️ Icon li
 
 const events = [
   {
-    title: "Annual Sports Meet 2025",
+    title: "Annual Atheletic Meet 2025",
     description:
       "Departments go head-to-head in an intense showdown of strategy and skill — who will claim the championship this year?",
     image:
