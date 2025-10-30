@@ -28,6 +28,7 @@ const TeamMember = z.object({
   phone: z.string().regex(/^[6-9]\d{9}$/, "Enter valid 10-digit Indian mobile number"),
   school: z.string().min(1, "Select school"),
   department: z.string().min(1, "Enter department shortform"),
+  classSection: z.string().optional(),
   educationLevel: z.enum(["UG", "PG", "PHD"], "Select UG, PG or PHD"),
 });
 
@@ -199,6 +200,7 @@ export default function TeamRegister() {
               phoneNumber: captainFormattedPhone,
               deptShort: data.captain.department,
               schoolShort: data.captain.school,
+              classSection: data.captain.classSection || "",
               educationLevel: data.captain.educationLevel,
             }
           },
@@ -256,6 +258,7 @@ export default function TeamRegister() {
                 phoneNumber: memberFormattedPhone,
                 deptShort: member.department,
                 schoolShort: member.school,
+                classSection: member.classSection || "",
                 educationLevel: member.educationLevel,
               }
             },
