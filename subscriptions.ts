@@ -19,6 +19,7 @@ export const onCreateIndividualRegistration = /* GraphQL */ `subscription OnCrea
     updatedAt
     user {
       christGmail
+      classSection
       clearId
       createdAt
       deptShort
@@ -36,6 +37,22 @@ export const onCreateIndividualRegistration = /* GraphQL */ `subscription OnCrea
 ` as GeneratedSubscription<
   APITypes.OnCreateIndividualRegistrationSubscriptionVariables,
   APITypes.OnCreateIndividualRegistrationSubscription
+>;
+export const onCreateNewssection = /* GraphQL */ `subscription OnCreateNewssection(
+  $filter: ModelSubscriptionNewssectionFilterInput
+) {
+  onCreateNewssection(filter: $filter) {
+    createdAt
+    description
+    id
+    title
+    updatedAt
+    __typename
+  }
+}
+` as GeneratedSubscription<
+  APITypes.OnCreateNewssectionSubscriptionVariables,
+  APITypes.OnCreateNewssectionSubscription
 >;
 export const onCreateSchool = /* GraphQL */ `subscription OnCreateSchool($filter: ModelSubscriptionSchoolFilterInput) {
   onCreateSchool(filter: $filter) {
@@ -83,6 +100,7 @@ export const onCreateTeam = /* GraphQL */ `subscription OnCreateTeam($filter: Mo
   onCreateTeam(filter: $filter) {
     captain {
       christGmail
+      classSection
       clearId
       createdAt
       deptShort
@@ -110,6 +128,7 @@ export const onCreateTeam = /* GraphQL */ `subscription OnCreateTeam($filter: Mo
 export const onCreateUser = /* GraphQL */ `subscription OnCreateUser($filter: ModelSubscriptionUserFilterInput) {
   onCreateUser(filter: $filter) {
     christGmail
+    classSection
     clearId
     createdAt
     deptShort
@@ -145,6 +164,7 @@ export const onDeleteIndividualRegistration = /* GraphQL */ `subscription OnDele
     updatedAt
     user {
       christGmail
+      classSection
       clearId
       createdAt
       deptShort
@@ -162,6 +182,22 @@ export const onDeleteIndividualRegistration = /* GraphQL */ `subscription OnDele
 ` as GeneratedSubscription<
   APITypes.OnDeleteIndividualRegistrationSubscriptionVariables,
   APITypes.OnDeleteIndividualRegistrationSubscription
+>;
+export const onDeleteNewssection = /* GraphQL */ `subscription OnDeleteNewssection(
+  $filter: ModelSubscriptionNewssectionFilterInput
+) {
+  onDeleteNewssection(filter: $filter) {
+    createdAt
+    description
+    id
+    title
+    updatedAt
+    __typename
+  }
+}
+` as GeneratedSubscription<
+  APITypes.OnDeleteNewssectionSubscriptionVariables,
+  APITypes.OnDeleteNewssectionSubscription
 >;
 export const onDeleteSchool = /* GraphQL */ `subscription OnDeleteSchool($filter: ModelSubscriptionSchoolFilterInput) {
   onDeleteSchool(filter: $filter) {
@@ -209,6 +245,7 @@ export const onDeleteTeam = /* GraphQL */ `subscription OnDeleteTeam($filter: Mo
   onDeleteTeam(filter: $filter) {
     captain {
       christGmail
+      classSection
       clearId
       createdAt
       deptShort
@@ -236,6 +273,7 @@ export const onDeleteTeam = /* GraphQL */ `subscription OnDeleteTeam($filter: Mo
 export const onDeleteUser = /* GraphQL */ `subscription OnDeleteUser($filter: ModelSubscriptionUserFilterInput) {
   onDeleteUser(filter: $filter) {
     christGmail
+    classSection
     clearId
     createdAt
     deptShort
@@ -271,6 +309,7 @@ export const onUpdateIndividualRegistration = /* GraphQL */ `subscription OnUpda
     updatedAt
     user {
       christGmail
+      classSection
       clearId
       createdAt
       deptShort
@@ -288,6 +327,22 @@ export const onUpdateIndividualRegistration = /* GraphQL */ `subscription OnUpda
 ` as GeneratedSubscription<
   APITypes.OnUpdateIndividualRegistrationSubscriptionVariables,
   APITypes.OnUpdateIndividualRegistrationSubscription
+>;
+export const onUpdateNewssection = /* GraphQL */ `subscription OnUpdateNewssection(
+  $filter: ModelSubscriptionNewssectionFilterInput
+) {
+  onUpdateNewssection(filter: $filter) {
+    createdAt
+    description
+    id
+    title
+    updatedAt
+    __typename
+  }
+}
+` as GeneratedSubscription<
+  APITypes.OnUpdateNewssectionSubscriptionVariables,
+  APITypes.OnUpdateNewssectionSubscription
 >;
 export const onUpdateSchool = /* GraphQL */ `subscription OnUpdateSchool($filter: ModelSubscriptionSchoolFilterInput) {
   onUpdateSchool(filter: $filter) {
@@ -335,6 +390,7 @@ export const onUpdateTeam = /* GraphQL */ `subscription OnUpdateTeam($filter: Mo
   onUpdateTeam(filter: $filter) {
     captain {
       christGmail
+      classSection
       clearId
       createdAt
       deptShort
@@ -362,6 +418,7 @@ export const onUpdateTeam = /* GraphQL */ `subscription OnUpdateTeam($filter: Mo
 export const onUpdateUser = /* GraphQL */ `subscription OnUpdateUser($filter: ModelSubscriptionUserFilterInput) {
   onUpdateUser(filter: $filter) {
     christGmail
+    classSection
     clearId
     createdAt
     deptShort

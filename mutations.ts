@@ -20,6 +20,7 @@ export const createIndividualRegistration = /* GraphQL */ `mutation CreateIndivi
     updatedAt
     user {
       christGmail
+      classSection
       clearId
       createdAt
       deptShort
@@ -37,6 +38,23 @@ export const createIndividualRegistration = /* GraphQL */ `mutation CreateIndivi
 ` as GeneratedMutation<
   APITypes.CreateIndividualRegistrationMutationVariables,
   APITypes.CreateIndividualRegistrationMutation
+>;
+export const createNewssection = /* GraphQL */ `mutation CreateNewssection(
+  $condition: ModelNewssectionConditionInput
+  $input: CreateNewssectionInput!
+) {
+  createNewssection(condition: $condition, input: $input) {
+    createdAt
+    description
+    id
+    title
+    updatedAt
+    __typename
+  }
+}
+` as GeneratedMutation<
+  APITypes.CreateNewssectionMutationVariables,
+  APITypes.CreateNewssectionMutation
 >;
 export const createSchool = /* GraphQL */ `mutation CreateSchool(
   $condition: ModelSchoolConditionInput
@@ -93,6 +111,7 @@ export const createTeam = /* GraphQL */ `mutation CreateTeam(
   createTeam(condition: $condition, input: $input) {
     captain {
       christGmail
+      classSection
       clearId
       createdAt
       deptShort
@@ -123,6 +142,7 @@ export const createUser = /* GraphQL */ `mutation CreateUser(
 ) {
   createUser(condition: $condition, input: $input) {
     christGmail
+    classSection
     clearId
     createdAt
     deptShort
@@ -159,6 +179,7 @@ export const deleteIndividualRegistration = /* GraphQL */ `mutation DeleteIndivi
     updatedAt
     user {
       christGmail
+      classSection
       clearId
       createdAt
       deptShort
@@ -176,6 +197,23 @@ export const deleteIndividualRegistration = /* GraphQL */ `mutation DeleteIndivi
 ` as GeneratedMutation<
   APITypes.DeleteIndividualRegistrationMutationVariables,
   APITypes.DeleteIndividualRegistrationMutation
+>;
+export const deleteNewssection = /* GraphQL */ `mutation DeleteNewssection(
+  $condition: ModelNewssectionConditionInput
+  $input: DeleteNewssectionInput!
+) {
+  deleteNewssection(condition: $condition, input: $input) {
+    createdAt
+    description
+    id
+    title
+    updatedAt
+    __typename
+  }
+}
+` as GeneratedMutation<
+  APITypes.DeleteNewssectionMutationVariables,
+  APITypes.DeleteNewssectionMutation
 >;
 export const deleteSchool = /* GraphQL */ `mutation DeleteSchool(
   $condition: ModelSchoolConditionInput
@@ -232,6 +270,7 @@ export const deleteTeam = /* GraphQL */ `mutation DeleteTeam(
   deleteTeam(condition: $condition, input: $input) {
     captain {
       christGmail
+      classSection
       clearId
       createdAt
       deptShort
@@ -262,6 +301,7 @@ export const deleteUser = /* GraphQL */ `mutation DeleteUser(
 ) {
   deleteUser(condition: $condition, input: $input) {
     christGmail
+    classSection
     clearId
     createdAt
     deptShort
@@ -298,6 +338,7 @@ export const updateIndividualRegistration = /* GraphQL */ `mutation UpdateIndivi
     updatedAt
     user {
       christGmail
+      classSection
       clearId
       createdAt
       deptShort
@@ -315,6 +356,23 @@ export const updateIndividualRegistration = /* GraphQL */ `mutation UpdateIndivi
 ` as GeneratedMutation<
   APITypes.UpdateIndividualRegistrationMutationVariables,
   APITypes.UpdateIndividualRegistrationMutation
+>;
+export const updateNewssection = /* GraphQL */ `mutation UpdateNewssection(
+  $condition: ModelNewssectionConditionInput
+  $input: UpdateNewssectionInput!
+) {
+  updateNewssection(condition: $condition, input: $input) {
+    createdAt
+    description
+    id
+    title
+    updatedAt
+    __typename
+  }
+}
+` as GeneratedMutation<
+  APITypes.UpdateNewssectionMutationVariables,
+  APITypes.UpdateNewssectionMutation
 >;
 export const updateSchool = /* GraphQL */ `mutation UpdateSchool(
   $condition: ModelSchoolConditionInput
@@ -371,6 +429,7 @@ export const updateTeam = /* GraphQL */ `mutation UpdateTeam(
   updateTeam(condition: $condition, input: $input) {
     captain {
       christGmail
+      classSection
       clearId
       createdAt
       deptShort
@@ -401,6 +460,7 @@ export const updateUser = /* GraphQL */ `mutation UpdateUser(
 ) {
   updateUser(condition: $condition, input: $input) {
     christGmail
+    classSection
     clearId
     createdAt
     deptShort

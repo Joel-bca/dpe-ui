@@ -15,6 +15,7 @@ export type IndividualRegistration = {
 export type User = {
   __typename: "User",
   christGmail: string,
+  classSection: string,
   clearId: string,
   createdAt: string,
   deptShort: string,
@@ -48,6 +49,15 @@ export type Team = {
   eventId: string,
   teamMemberClearIds?: Array< string | null > | null,
   teamName: string,
+  updatedAt: string,
+};
+
+export type newssection = {
+  __typename: "newssection",
+  createdAt: string,
+  description: string,
+  id: string,
+  title: string,
   updatedAt: string,
 };
 
@@ -152,6 +162,23 @@ export enum ModelSortDirection {
 }
 
 
+export type ModelNewssectionFilterInput = {
+  and?: Array< ModelNewssectionFilterInput | null > | null,
+  createdAt?: ModelStringInput | null,
+  description?: ModelStringInput | null,
+  id?: ModelIDInput | null,
+  not?: ModelNewssectionFilterInput | null,
+  or?: Array< ModelNewssectionFilterInput | null > | null,
+  title?: ModelStringInput | null,
+  updatedAt?: ModelStringInput | null,
+};
+
+export type ModelNewssectionConnection = {
+  __typename: "ModelNewssectionConnection",
+  items:  Array<newssection | null >,
+  nextToken?: string | null,
+};
+
 export type ModelSchoolFilterInput = {
   and?: Array< ModelSchoolFilterInput | null > | null,
   color?: ModelStringInput | null,
@@ -211,6 +238,7 @@ export type ModelTeamFilterInput = {
 export type ModelUserFilterInput = {
   and?: Array< ModelUserFilterInput | null > | null,
   christGmail?: ModelStringInput | null,
+  classSection?: ModelStringInput | null,
   clearId?: ModelIDInput | null,
   createdAt?: ModelStringInput | null,
   deptShort?: ModelStringInput | null,
@@ -245,6 +273,22 @@ export type CreateIndividualRegistrationInput = {
   eventId: string,
   id?: string | null,
   playerClearId: string,
+};
+
+export type ModelNewssectionConditionInput = {
+  and?: Array< ModelNewssectionConditionInput | null > | null,
+  createdAt?: ModelStringInput | null,
+  description?: ModelStringInput | null,
+  not?: ModelNewssectionConditionInput | null,
+  or?: Array< ModelNewssectionConditionInput | null > | null,
+  title?: ModelStringInput | null,
+  updatedAt?: ModelStringInput | null,
+};
+
+export type CreateNewssectionInput = {
+  description: string,
+  id?: string | null,
+  title: string,
 };
 
 export type ModelSchoolConditionInput = {
@@ -304,6 +348,7 @@ export type CreateTeamInput = {
 export type ModelUserConditionInput = {
   and?: Array< ModelUserConditionInput | null > | null,
   christGmail?: ModelStringInput | null,
+  classSection?: ModelStringInput | null,
   createdAt?: ModelStringInput | null,
   deptShort?: ModelStringInput | null,
   educationLevel?: ModelStringInput | null,
@@ -318,6 +363,7 @@ export type ModelUserConditionInput = {
 
 export type CreateUserInput = {
   christGmail: string,
+  classSection: string,
   clearId: string,
   deptShort: string,
   educationLevel: string,
@@ -328,6 +374,10 @@ export type CreateUserInput = {
 };
 
 export type DeleteIndividualRegistrationInput = {
+  id: string,
+};
+
+export type DeleteNewssectionInput = {
   id: string,
 };
 
@@ -353,6 +403,12 @@ export type UpdateIndividualRegistrationInput = {
   playerClearId?: string | null,
 };
 
+export type UpdateNewssectionInput = {
+  description?: string | null,
+  id: string,
+  title?: string | null,
+};
+
 export type UpdateSchoolInput = {
   color?: string | null,
   fullName?: string | null,
@@ -376,6 +432,7 @@ export type UpdateTeamInput = {
 
 export type UpdateUserInput = {
   christGmail?: string | null,
+  classSection?: string | null,
   clearId: string,
   deptShort?: string | null,
   educationLevel?: string | null,
@@ -423,6 +480,16 @@ export type ModelSubscriptionIDInput = {
   ne?: string | null,
   notContains?: string | null,
   notIn?: Array< string | null > | null,
+};
+
+export type ModelSubscriptionNewssectionFilterInput = {
+  and?: Array< ModelSubscriptionNewssectionFilterInput | null > | null,
+  createdAt?: ModelSubscriptionStringInput | null,
+  description?: ModelSubscriptionStringInput | null,
+  id?: ModelSubscriptionIDInput | null,
+  or?: Array< ModelSubscriptionNewssectionFilterInput | null > | null,
+  title?: ModelSubscriptionStringInput | null,
+  updatedAt?: ModelSubscriptionStringInput | null,
 };
 
 export type ModelSubscriptionSchoolFilterInput = {
@@ -475,6 +542,7 @@ export type ModelSubscriptionTeamFilterInput = {
 export type ModelSubscriptionUserFilterInput = {
   and?: Array< ModelSubscriptionUserFilterInput | null > | null,
   christGmail?: ModelSubscriptionStringInput | null,
+  classSection?: ModelSubscriptionStringInput | null,
   clearId?: ModelSubscriptionIDInput | null,
   createdAt?: ModelSubscriptionStringInput | null,
   deptShort?: ModelSubscriptionStringInput | null,
@@ -503,6 +571,7 @@ export type GetIndividualRegistrationQuery = {
     user?:  {
       __typename: "User",
       christGmail: string,
+      classSection: string,
       clearId: string,
       createdAt: string,
       deptShort: string,
@@ -513,6 +582,21 @@ export type GetIndividualRegistrationQuery = {
       schoolShort: string,
       updatedAt: string,
     } | null,
+  } | null,
+};
+
+export type GetNewssectionQueryVariables = {
+  id: string,
+};
+
+export type GetNewssectionQuery = {
+  getNewssection?:  {
+    __typename: "newssection",
+    createdAt: string,
+    description: string,
+    id: string,
+    title: string,
+    updatedAt: string,
   } | null,
 };
 
@@ -570,6 +654,7 @@ export type GetTeamQuery = {
     captain?:  {
       __typename: "User",
       christGmail: string,
+      classSection: string,
       clearId: string,
       createdAt: string,
       deptShort: string,
@@ -597,6 +682,7 @@ export type GetUserQuery = {
   getUser?:  {
     __typename: "User",
     christGmail: string,
+    classSection: string,
     clearId: string,
     createdAt: string,
     deptShort: string,
@@ -634,6 +720,29 @@ export type ListIndividualRegistrationsQuery = {
       eventId: string,
       id: string,
       playerClearId: string,
+      updatedAt: string,
+    } | null >,
+    nextToken?: string | null,
+  } | null,
+};
+
+export type ListNewssectionsQueryVariables = {
+  filter?: ModelNewssectionFilterInput | null,
+  id?: string | null,
+  limit?: number | null,
+  nextToken?: string | null,
+  sortDirection?: ModelSortDirection | null,
+};
+
+export type ListNewssectionsQuery = {
+  listNewssections?:  {
+    __typename: "ModelNewssectionConnection",
+    items:  Array< {
+      __typename: "newssection",
+      createdAt: string,
+      description: string,
+      id: string,
+      title: string,
       updatedAt: string,
     } | null >,
     nextToken?: string | null,
@@ -726,6 +835,7 @@ export type ListUsersQuery = {
     items:  Array< {
       __typename: "User",
       christGmail: string,
+      classSection: string,
       clearId: string,
       createdAt: string,
       deptShort: string,
@@ -756,6 +866,7 @@ export type CreateIndividualRegistrationMutation = {
     user?:  {
       __typename: "User",
       christGmail: string,
+      classSection: string,
       clearId: string,
       createdAt: string,
       deptShort: string,
@@ -766,6 +877,22 @@ export type CreateIndividualRegistrationMutation = {
       schoolShort: string,
       updatedAt: string,
     } | null,
+  } | null,
+};
+
+export type CreateNewssectionMutationVariables = {
+  condition?: ModelNewssectionConditionInput | null,
+  input: CreateNewssectionInput,
+};
+
+export type CreateNewssectionMutation = {
+  createNewssection?:  {
+    __typename: "newssection",
+    createdAt: string,
+    description: string,
+    id: string,
+    title: string,
+    updatedAt: string,
   } | null,
 };
 
@@ -826,6 +953,7 @@ export type CreateTeamMutation = {
     captain?:  {
       __typename: "User",
       christGmail: string,
+      classSection: string,
       clearId: string,
       createdAt: string,
       deptShort: string,
@@ -854,6 +982,7 @@ export type CreateUserMutation = {
   createUser?:  {
     __typename: "User",
     christGmail: string,
+    classSection: string,
     clearId: string,
     createdAt: string,
     deptShort: string,
@@ -890,6 +1019,7 @@ export type DeleteIndividualRegistrationMutation = {
     user?:  {
       __typename: "User",
       christGmail: string,
+      classSection: string,
       clearId: string,
       createdAt: string,
       deptShort: string,
@@ -900,6 +1030,22 @@ export type DeleteIndividualRegistrationMutation = {
       schoolShort: string,
       updatedAt: string,
     } | null,
+  } | null,
+};
+
+export type DeleteNewssectionMutationVariables = {
+  condition?: ModelNewssectionConditionInput | null,
+  input: DeleteNewssectionInput,
+};
+
+export type DeleteNewssectionMutation = {
+  deleteNewssection?:  {
+    __typename: "newssection",
+    createdAt: string,
+    description: string,
+    id: string,
+    title: string,
+    updatedAt: string,
   } | null,
 };
 
@@ -960,6 +1106,7 @@ export type DeleteTeamMutation = {
     captain?:  {
       __typename: "User",
       christGmail: string,
+      classSection: string,
       clearId: string,
       createdAt: string,
       deptShort: string,
@@ -988,6 +1135,7 @@ export type DeleteUserMutation = {
   deleteUser?:  {
     __typename: "User",
     christGmail: string,
+    classSection: string,
     clearId: string,
     createdAt: string,
     deptShort: string,
@@ -1024,6 +1172,7 @@ export type UpdateIndividualRegistrationMutation = {
     user?:  {
       __typename: "User",
       christGmail: string,
+      classSection: string,
       clearId: string,
       createdAt: string,
       deptShort: string,
@@ -1034,6 +1183,22 @@ export type UpdateIndividualRegistrationMutation = {
       schoolShort: string,
       updatedAt: string,
     } | null,
+  } | null,
+};
+
+export type UpdateNewssectionMutationVariables = {
+  condition?: ModelNewssectionConditionInput | null,
+  input: UpdateNewssectionInput,
+};
+
+export type UpdateNewssectionMutation = {
+  updateNewssection?:  {
+    __typename: "newssection",
+    createdAt: string,
+    description: string,
+    id: string,
+    title: string,
+    updatedAt: string,
   } | null,
 };
 
@@ -1094,6 +1259,7 @@ export type UpdateTeamMutation = {
     captain?:  {
       __typename: "User",
       christGmail: string,
+      classSection: string,
       clearId: string,
       createdAt: string,
       deptShort: string,
@@ -1122,6 +1288,7 @@ export type UpdateUserMutation = {
   updateUser?:  {
     __typename: "User",
     christGmail: string,
+    classSection: string,
     clearId: string,
     createdAt: string,
     deptShort: string,
@@ -1157,6 +1324,7 @@ export type OnCreateIndividualRegistrationSubscription = {
     user?:  {
       __typename: "User",
       christGmail: string,
+      classSection: string,
       clearId: string,
       createdAt: string,
       deptShort: string,
@@ -1167,6 +1335,21 @@ export type OnCreateIndividualRegistrationSubscription = {
       schoolShort: string,
       updatedAt: string,
     } | null,
+  } | null,
+};
+
+export type OnCreateNewssectionSubscriptionVariables = {
+  filter?: ModelSubscriptionNewssectionFilterInput | null,
+};
+
+export type OnCreateNewssectionSubscription = {
+  onCreateNewssection?:  {
+    __typename: "newssection",
+    createdAt: string,
+    description: string,
+    id: string,
+    title: string,
+    updatedAt: string,
   } | null,
 };
 
@@ -1224,6 +1407,7 @@ export type OnCreateTeamSubscription = {
     captain?:  {
       __typename: "User",
       christGmail: string,
+      classSection: string,
       clearId: string,
       createdAt: string,
       deptShort: string,
@@ -1251,6 +1435,7 @@ export type OnCreateUserSubscription = {
   onCreateUser?:  {
     __typename: "User",
     christGmail: string,
+    classSection: string,
     clearId: string,
     createdAt: string,
     deptShort: string,
@@ -1286,6 +1471,7 @@ export type OnDeleteIndividualRegistrationSubscription = {
     user?:  {
       __typename: "User",
       christGmail: string,
+      classSection: string,
       clearId: string,
       createdAt: string,
       deptShort: string,
@@ -1296,6 +1482,21 @@ export type OnDeleteIndividualRegistrationSubscription = {
       schoolShort: string,
       updatedAt: string,
     } | null,
+  } | null,
+};
+
+export type OnDeleteNewssectionSubscriptionVariables = {
+  filter?: ModelSubscriptionNewssectionFilterInput | null,
+};
+
+export type OnDeleteNewssectionSubscription = {
+  onDeleteNewssection?:  {
+    __typename: "newssection",
+    createdAt: string,
+    description: string,
+    id: string,
+    title: string,
+    updatedAt: string,
   } | null,
 };
 
@@ -1353,6 +1554,7 @@ export type OnDeleteTeamSubscription = {
     captain?:  {
       __typename: "User",
       christGmail: string,
+      classSection: string,
       clearId: string,
       createdAt: string,
       deptShort: string,
@@ -1380,6 +1582,7 @@ export type OnDeleteUserSubscription = {
   onDeleteUser?:  {
     __typename: "User",
     christGmail: string,
+    classSection: string,
     clearId: string,
     createdAt: string,
     deptShort: string,
@@ -1415,6 +1618,7 @@ export type OnUpdateIndividualRegistrationSubscription = {
     user?:  {
       __typename: "User",
       christGmail: string,
+      classSection: string,
       clearId: string,
       createdAt: string,
       deptShort: string,
@@ -1425,6 +1629,21 @@ export type OnUpdateIndividualRegistrationSubscription = {
       schoolShort: string,
       updatedAt: string,
     } | null,
+  } | null,
+};
+
+export type OnUpdateNewssectionSubscriptionVariables = {
+  filter?: ModelSubscriptionNewssectionFilterInput | null,
+};
+
+export type OnUpdateNewssectionSubscription = {
+  onUpdateNewssection?:  {
+    __typename: "newssection",
+    createdAt: string,
+    description: string,
+    id: string,
+    title: string,
+    updatedAt: string,
   } | null,
 };
 
@@ -1482,6 +1701,7 @@ export type OnUpdateTeamSubscription = {
     captain?:  {
       __typename: "User",
       christGmail: string,
+      classSection: string,
       clearId: string,
       createdAt: string,
       deptShort: string,
@@ -1509,6 +1729,7 @@ export type OnUpdateUserSubscription = {
   onUpdateUser?:  {
     __typename: "User",
     christGmail: string,
+    classSection: string,
     clearId: string,
     createdAt: string,
     deptShort: string,

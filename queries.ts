@@ -17,6 +17,7 @@ export const getIndividualRegistration = /* GraphQL */ `query GetIndividualRegis
     updatedAt
     user {
       christGmail
+      classSection
       clearId
       createdAt
       deptShort
@@ -34,6 +35,20 @@ export const getIndividualRegistration = /* GraphQL */ `query GetIndividualRegis
 ` as GeneratedQuery<
   APITypes.GetIndividualRegistrationQueryVariables,
   APITypes.GetIndividualRegistrationQuery
+>;
+export const getNewssection = /* GraphQL */ `query GetNewssection($id: ID!) {
+  getNewssection(id: $id) {
+    createdAt
+    description
+    id
+    title
+    updatedAt
+    __typename
+  }
+}
+` as GeneratedQuery<
+  APITypes.GetNewssectionQueryVariables,
+  APITypes.GetNewssectionQuery
 >;
 export const getSchool = /* GraphQL */ `query GetSchool($schoolShort: ID!) {
   getSchool(schoolShort: $schoolShort) {
@@ -75,6 +90,7 @@ export const getTeam = /* GraphQL */ `query GetTeam($teamName: String!) {
   getTeam(teamName: $teamName) {
     captain {
       christGmail
+      classSection
       clearId
       createdAt
       deptShort
@@ -99,6 +115,7 @@ export const getTeam = /* GraphQL */ `query GetTeam($teamName: String!) {
 export const getUser = /* GraphQL */ `query GetUser($clearId: ID!) {
   getUser(clearId: $clearId) {
     christGmail
+    classSection
     clearId
     createdAt
     deptShort
@@ -149,6 +166,36 @@ export const listIndividualRegistrations = /* GraphQL */ `query ListIndividualRe
 ` as GeneratedQuery<
   APITypes.ListIndividualRegistrationsQueryVariables,
   APITypes.ListIndividualRegistrationsQuery
+>;
+export const listNewssections = /* GraphQL */ `query ListNewssections(
+  $filter: ModelNewssectionFilterInput
+  $id: ID
+  $limit: Int
+  $nextToken: String
+  $sortDirection: ModelSortDirection
+) {
+  listNewssections(
+    filter: $filter
+    id: $id
+    limit: $limit
+    nextToken: $nextToken
+    sortDirection: $sortDirection
+  ) {
+    items {
+      createdAt
+      description
+      id
+      title
+      updatedAt
+      __typename
+    }
+    nextToken
+    __typename
+  }
+}
+` as GeneratedQuery<
+  APITypes.ListNewssectionsQueryVariables,
+  APITypes.ListNewssectionsQuery
 >;
 export const listSchools = /* GraphQL */ `query ListSchools(
   $filter: ModelSchoolFilterInput
@@ -256,6 +303,7 @@ export const listUsers = /* GraphQL */ `query ListUsers(
   ) {
     items {
       christGmail
+      classSection
       clearId
       createdAt
       deptShort
