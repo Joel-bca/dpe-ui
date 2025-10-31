@@ -23,7 +23,7 @@ export function AboutSection() {
           >
             <div className="relative w-[90%] md:w-[95%] lg:w-[90%] rounded-3xl overflow-hidden shadow-2xl">
               <Image
-                src="/campus.jpg"
+                src="https://dpe-byc-assets.s3.eu-north-1.amazonaws.com/campus.jpg"
                 alt="Christ University BYC Campus"
                 width={600}
                 height={400}
@@ -83,7 +83,7 @@ export function AboutSection() {
           >
             <div className="relative w-[90%] md:w-[95%] lg:w-[90%] rounded-3xl overflow-hidden shadow-2xl">
               <Image
-                src="/department.jpg"
+                src="https://dpe-byc-assets.s3.eu-north-1.amazonaws.com/department.jpg"
                 alt="DPE Committees"
                 width={600}
                 height={400}
@@ -141,7 +141,7 @@ export function AboutSection() {
           >
             <div className="relative w-[90%] md:w-[95%] lg:w-[90%] rounded-3xl overflow-hidden shadow-2xl">
               <Image
-                src="/event.jpg"
+                src="https://dpe-byc-assets.s3.eu-north-1.amazonaws.com/event.jpg"
                 alt="DPE Events"
                 width={600}
                 height={400}

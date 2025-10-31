@@ -19,7 +19,7 @@ export default function ASMPage() {
     <div className="min-h-screen bg-gradient-to-b from-gray-50 via-gray-100 to-gray-200 text-gray-900">
       {/* ===== HERO SECTION ===== */}
       <section className="relative h-screen w-full flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 bg-[url('/event.jpg')] bg-cover bg-center brightness-[0.55]"></div>
+        <div className="absolute inset-0 bg-[url('https://dpe-byc-assets.s3.eu-north-1.amazonaws.com/event.jpg')] bg-cover bg-center brightness-[0.55]"></div>
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70"></div>
 
         <motion.div
