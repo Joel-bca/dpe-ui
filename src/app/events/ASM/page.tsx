@@ -82,9 +82,9 @@ export default function ASMPage() {
               </ul>
               (Relay excluded)
             </li>
-            <li><strong>For all Teams event registions please contact your respective Department representatives</strong></li>
+            <li><strong>For all Teams event registrations, please contact your respective Department representatives</strong></li>
             <li> 
-              Department representatives Contact informations:
+              Department representatives Contact information:
               <ul className="list-inside list-disc ml-6">
                 <li><strong>SBM (Evan):</strong> +91 9074352776</li>
                 <li><strong>SCFA (Veda):</strong> +91 9746609110</li>
