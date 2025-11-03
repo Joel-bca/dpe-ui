@@ -82,7 +82,17 @@ export default function ASMPage() {
               </ul>
               (Relay excluded)
             </li>
-            <li><strong>All Teams event registion will be done registration desk.</strong></li>
+            <li><strong>For all Teams event registions please contact your respective Department representatives</strong></li>
+            <li> 
+              Department representatives Contact informations:
+              <ul className="list-inside list-disc ml-6">
+                <li><strong>SBM (Evan):</strong> +91 9074352776</li>
+                <li><strong>SCFA (Veda):</strong> +91 9746609110</li>
+                <li><strong>SOSS (Darshan):</strong> +91 9401733965</li>
+                <li><strong>SOPS (Shruti):</strong> +91 9898880136</li>
+                <li><strong>SOS (Justin):</strong> +91 8943887935</li>
+              </ul>
+            </li>
             <li>Only one relay team per School is permitted.</li>
             <li>Mixed relay will be conducted in Kengeri Campus</li>
             <li>
