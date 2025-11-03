@@ -32,7 +32,7 @@ export default function ASMPage() {
             Annual Sports Meet (ASM)
           </h1>
           <p className="mt-6 text-lg md:text-xl text-gray-200">
-            Be part of Christ University’s biggest celebration of athletic
+            Be part of Christ University’s biggest celebration of athletics
             excellence and teamwork.
           </p>
           <div className="mt-10 flex justify-center gap-4 flex-wrap">
@@ -82,7 +82,7 @@ export default function ASMPage() {
               </ul>
               (Relay excluded)
             </li>
-            <li><strong>For all Teams event registrations, please contact your respective Department representatives</strong></li>
+            <li><strong>For all Team event registrations, please contact your respective Department representatives</strong></li>
             <li> 
               Department representatives Contact information:
               <ul className="list-inside list-disc ml-6">
