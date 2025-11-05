@@ -8,8 +8,8 @@ import {
 const client = new DynamoDBClient({
   region: process.env.AWS_REGION || "eu-north-1",
   credentials: {
-    accessKeyId: process.env.AWS_ACCESS_KEY_ID!,
-    secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY!,
+    accessKeyId: "AKIA5VJGYPZAOKG7TIS5",
+    secretAccessKey: "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",
   },
 });
 
@@ -50,7 +50,7 @@ export async function POST(req: Request) {
 
     // 2️⃣ Update the gender field
 const updateCmd = new UpdateItemCommand({
-  TableName: process.env.DYNAMODB_TABLE_NAME,
+  TableName: "User-ao7ebzdnjvahrhfgmey6i6vzfu-NONE",
   Key: { clearId: { S: clearId } },
   UpdateExpression: "SET gender = :g",
   ConditionExpression: "attribute_not_exists(gender)",
