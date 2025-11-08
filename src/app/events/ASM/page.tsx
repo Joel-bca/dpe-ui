@@ -36,7 +36,11 @@ export default function ASMPage() {
             excellence and teamwork.
           </p>
           <div className="mt-10 flex justify-center gap-4 flex-wrap">
-              <a href="/ASM 2025-26.pdf" download="ASM 2025-26.pdf" className="bg-gradient-to-r from-gray-800 to-gray-600 text-white hover:opacity-90 px-6 py-2 rounded-xl inline-block">
+            <a
+              href="/ASM 2025-26.pdf"
+              download="ASM 2025-26.pdf"
+              className="bg-gradient-to-r from-gray-800 to-gray-600 text-white hover:opacity-90 px-6 py-2 rounded-xl inline-block"
+            >
               Download Rulebook
             </a>
           </div>
@@ -59,7 +63,8 @@ export default function ASMPage() {
           <ul className="list-disc ml-6 text-gray-700 space-y-2">
             <li>
               Only <strong>Christ-provided Gmail accounts</strong> are permitted
-              for registration. Unauthorized domains will not receive a CLEAR ID.
+              for registration. Unauthorized domains will not receive a CLEAR
+              ID.
             </li>
             <li>
               For team events, ensure all teammate names and details are entered
@@ -69,7 +74,9 @@ export default function ASMPage() {
               All participants (staff & students) must register within the
               scheduled dates.
             </li>
-            <li>A Mixed Relay will be conducted for both staff and students.</li>
+            <li>
+              A Mixed Relay will be conducted for both staff and students.
+            </li>
             <li>
               Proper sports attire and shoes are mandatory for all participants.
             </li>
@@ -82,30 +89,46 @@ export default function ASMPage() {
               </ul>
               (Relay excluded)
             </li>
-            <li><strong>For all Team event registrations, please contact your respective Department representatives</strong></li>
-            <li> 
+            <li>
+              <strong>
+                For all Team event registrations, please contact your respective
+                Department representatives
+              </strong>
+            </li>
+            <li>
               Department representatives Contact information:
               <ul className="list-inside list-disc ml-6">
-                <li><strong>SBM (Evan):</strong> +91 9074352776</li>
-                <li><strong>SCFA (Veda):</strong> +91 9746609110</li>
-                <li><strong>SOSS (Darshan):</strong> +91 9401733965</li>
-                <li><strong>SOPS (Shruti):</strong> +91 9898880136</li>
-                <li><strong>SOS (Justin):</strong> +91 8943887935</li>
+                <li>
+                  <strong>SBM (Evan):</strong> +91 9074352776
+                </li>
+                <li>
+                  <strong>SCFA (Veda):</strong> +91 9746609110
+                </li>
+                <li>
+                  <strong>SOSS (Darshan):</strong> +91 9401733965
+                </li>
+                <li>
+                  <strong>SOPS (Shruti):</strong> +91 9898880136
+                </li>
+                <li>
+                  <strong>SOS (Justin):</strong> +91 8943887935
+                </li>
               </ul>
             </li>
             <li>Only one relay team per School is permitted.</li>
             <li>Mixed relay will be conducted in Kengeri Campus</li>
+            <li>College ID Cards must be presented during competitions.</li>
             <li>
-              College ID Cards must be presented during competitions.
-            </li>
-            <li>
-              Best Male & Female Athletes (Staff & Student) will be recognized and rewarded.
+              Best Male & Female Athletes (Staff & Student) will be recognized
+              and rewarded.
             </li>
             <li>
               Breakfast & Lunch will be provided only to athletic officials,
               staff, and volunteers.
             </li>
-            <li>Officials’ decisions are final. No appeals will be entertained.</li>
+            <li>
+              Officials’ decisions are final. No appeals will be entertained.
+            </li>
             <li>
               The Organizing Committee reserves the right to make emergency
               decisions if required.
@@ -124,13 +147,21 @@ export default function ASMPage() {
               </li>
               <li>
                 For CLEAR ID generation issues, note that your ID QR will be
-                sent to your registered Christ Gmail ID, if not please contact the DPE IT Team.
+                sent to your registered Christ Gmail ID, if not please contact
+                the DPE IT Team.
               </li>
             </ul>
             <p className="mt-4 italic text-sm text-gray-600">
-              Any error during applying is not the responsibility 
-              of the Department of Physical Education.
+              Any error during applying is not the responsibility of the
+              Department of Physical Education.
               <i>Take your time and fill out the registration carefully.</i>
+            </p>
+            <p className="mt-4 italic text-sm text-gray-600">
+              Please avoid clicking the submit button multiple times. Once you
+              submit, you will be redirected to the main webpage. If you are
+              unsure whether your registration was successful, kindly reach out
+              to the IT/Technical Support Team listed below — we’re here to
+              help! - IT Committee✨
             </p>
           </div>
         </div>
@@ -169,7 +200,7 @@ export default function ASMPage() {
       <section className="bg-gray-100 py-16 px-6">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl font-bold mb-8 text-gray-800">
-            Technical Support & Contact 
+            Technical Support & Contact
           </h2>
 
           <div className="bg-white rounded-2xl shadow-md p-8 space-y-4 text-gray-700">
