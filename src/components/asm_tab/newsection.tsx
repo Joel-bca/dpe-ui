@@ -45,11 +45,12 @@ export function Newssection() {
   useEffect(() => {
     const fetchNews = async () => {
       try {
-        const result = await client.graphql({
-          query: listNewssections
-        });
-        const items = result.data.listNewssections.items;
-        setNewsItems(items);
+        const response = await fetch('/api/news');
+        if (!response.ok) {
+          throw new Error('Failed to fetch news');
+        }
+        const data = await response.json();
+        setNewsItems(data.newsItems);
       } catch (error) {
         console.error("Error fetching news:", error);
       } finally {
@@ -81,7 +82,11 @@ export function Newssection() {
                 <Activity className="text-blue-500 w-6 h-6" />
                 <h3 className="font-semibold text-lg">{item.title}</h3>
               </div>
-              <p className="text-gray-600">{item.description}</p>
+              <p className="text-gray-600 mb-4">{item.description}</p>
+              <div className="flex items-center gap-2 text-sm text-gray-500">
+                <Clock className="w-4 h-4" />
+                <span>{new Date(item.createdAt).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
+              </div>
             </motion.div>
           )) : (
             <div className="col-span-full text-center py-10">
