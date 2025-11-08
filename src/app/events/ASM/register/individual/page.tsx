@@ -43,12 +43,15 @@ const PersonalSchema = z.object({
 
 const CollegeSchema = z.object({
   registrationNumber: z.string().min(3, "Enter registration number"),
-  collegeEmail: z.string().email("Enter a valid college email"),
+  collegeEmail: z.string().email("Enter a valid college email").refine((email) => {
+    const domain = email.split('@')[1];
+    return domain && domain.endsWith('.christuniversity.in');
+  }, "Please use your official CHRIST University email (ending with .christuniversity.in)"),
   school: z.string().min(1, "Select your school"),
   department: z.string().min(1, "Enter department shortform"),
   classSection: z.string().min(1, "Enter class and section"),
   educationLevel: z.enum(["UG", "PG", "PHD"], "Select UG, PG or PHD"),
-});
+});     
 
 const EventsSchema = z.object({
   events: z
@@ -209,8 +212,8 @@ export default function IndividualRegister() {
           user.regNumber &&
           user.regNumber.trim() === data.registrationNumber.trim() &&
           user.christGmail &&
-          user.christGmail.trim().toLowerCase() ===
-            data.collegeEmail.trim().toLowerCase() &&
+          user.christGmail.trim().toLowerCase().split('@')[0] ===
+            data.collegeEmail.trim().toLowerCase().split('@')[0] &&
           user.phoneNumber &&
           user.phoneNumber.trim() === formattedPhone.trim()
       );
