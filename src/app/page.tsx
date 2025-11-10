@@ -1,7 +1,7 @@
 import { Nav } from "@/components/navgation";
 import { HeroSection } from "@/components/hero";
 import { EventCarousel  } from "@/components/EventCarousel";
-import { ScoreboardDashboard } from "@/components/asm_tab/ScoreboardDashboard";
+import { ScoreboardDashboardNew } from "@/components/asm_tab/ScoreboardDashboardNew";
 import { FixturesDashboard } from "@/components/asm_tab/FixturesDashboard";
 import { Newssection } from "@/components/asm_tab/newsection";
 
@@ -12,7 +12,7 @@ export default function HomePage() {
       <HeroSection />
       <EventCarousel  />
       <Newssection />
-      <ScoreboardDashboard />
+      <ScoreboardDashboardNew />
       <FixturesDashboard />
     </>
   );
