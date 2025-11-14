@@ -17,15 +17,22 @@ export async function GET() {
 
     const result = await client.send(command);
 
-    const scores = result.Items?.filter((item) => item.PositionID?.S !== "METADATA").map((item) => ({
-      id: item.EventID?.S + "#" + item.PositionID?.S,
-      eventId: item.EventName?.S || "",
-      points: parseInt(item.Position?.N || "0") === 1 ? 5 : parseInt(item.Position?.N || "0") === 2 ? 3 : parseInt(item.Position?.N || "0") === 3 ? 1 : 0,
-      playerOrTeamName: item.StudentName?.S || "",
-      schoolName: item.SchoolName?.S || "",
-      chestNo: item.ChestNo?.S || "",
-      position: parseInt(item.Position?.N || "0"),
-    })) || [];
+    const scores = result.Items?.filter((item) => item.PositionID?.S !== "METADATA").map((item) => {
+      const position = parseInt(item.Position?.N || "0");
+      const positionPoints = position === 1 ? 5 : position === 2 ? 3 : position === 3 ? 1 : 0;
+      const manualPoints = parseInt(item.Points?.N || "0");
+      const totalPoints = positionPoints + manualPoints;
+      return {
+        id: item.EventID?.S + "#" + item.PositionID?.S,
+        eventId: item.EventName?.S || "",
+        points: totalPoints,
+        manualPoints: item.Points?.S || "",
+        playerOrTeamName: item.StudentName?.S || "",
+        schoolName: item.SchoolName?.S || "",
+        chestNo: item.ChestNo?.S || "",
+        position: position,
+      };
+    }) || [];
 
     return NextResponse.json(scores);
   } catch (error) {

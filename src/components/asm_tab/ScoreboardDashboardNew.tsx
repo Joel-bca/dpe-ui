@@ -39,6 +39,7 @@ interface Winner {
   chestNo?: string;
   position: number;
   points: number;
+  manualPoints: number;
 }
 
 interface SchoolData {
@@ -116,6 +117,7 @@ export function ScoreboardDashboardNew() {
               chestNo: score.chestNo,
               position,
               points: score.points,
+              manualPoints: score.Points,
             });
           });
         });
@@ -253,7 +255,7 @@ export function ScoreboardDashboardNew() {
                           <Badge variant="secondary" className="mb-3 bg-white/20 text-white border-white/30 text-sm mx-auto px-3 py-1 whitespace-normal leading-tight">
                             {winner.school}
                           </Badge>
-                          <p className="text-sm opacity-90">Position: {winner.position} | Points: {winner.points}</p>
+                          <p className="text-sm opacity-90">Position: {winner.position} | Points: {winner.points} (Manual: {winner.manualPoints})</p>
                         </CardContent>
                       </Card>
                     </motion.div>
