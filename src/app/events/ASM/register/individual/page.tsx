@@ -772,6 +772,3 @@ export default function IndividualRegister() {
       {toast && <SimpleToast message={toast.message} isError={toast.isError} />}
     </RegisterLayout>
   );
-export default function RegistrationPage(){
-  return <Finaldestination />;
-}
