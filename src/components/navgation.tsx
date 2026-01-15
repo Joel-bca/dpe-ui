@@ -20,7 +20,7 @@ export function Nav() {
   const navItems = [
     { name: "Home", link: "/" },
     { name: "Committee", link: "/committee" },
-    { name: "Contact", link: "/footer" },
+    { name: "Contact", link: "/contact-terms" },
   ];
 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);

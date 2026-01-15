@@ -1,9 +1,7 @@
 import { Nav } from "@/components/navgation";
 import { HeroSection } from "@/components/hero";
 import { EventCarousel  } from "@/components/EventCarousel";
-import { ScoreboardDashboardNew } from "@/components/asm_tab/ScoreboardDashboardNew";
-import { FixturesDashboard } from "@/components/asm_tab/FixturesDashboard";
-import { Newssection } from "@/components/asm_tab/newsection";
+import { HomeCommitteePreview } from "@/components/hero_about_preview";
 
 export default function HomePage() {
   return (
@@ -11,9 +9,7 @@ export default function HomePage() {
       <Nav />
       <HeroSection />
       <EventCarousel  />
-      <Newssection />
-      <ScoreboardDashboardNew />
-      <FixturesDashboard />
+      <HomeCommitteePreview />
     </>
   );
 }

@@ -20,7 +20,7 @@ const events = [
     description:
       "An inter-collegiate sports tournament fostering camaraderie and competition",
     image:
-      "https://github.com/Joel-bca/dpe_assests_RR/blob/5966036eea21accd81b56094b73dc75f2971ed7f/beachvolleyball_cover_image.png",
+      "https://raw.githubusercontent.com/Joel-bca/dpe_assests_RR/5966036eea21accd81b56094b73dc75f2971ed7f/beachvolleyball_cover_image.png",
     buttonLink: "/events/Chavara_cup/register",
     status: "Upcoming",
     date: "Jannuary 2026",
