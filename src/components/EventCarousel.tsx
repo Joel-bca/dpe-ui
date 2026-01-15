@@ -16,14 +16,14 @@ import { CalendarDays, MapPin, Activity } from "lucide-react"; // ⬅️ Icon li
 
 const events = [
   {
-    title: "Annual Athletic Meet 2025",
+    title: "Chavara Cup",
     description:
-      "Departments go head-to-head in an intense showdown of strategy and skill — who will claim the championship this year?",
+      "An inter-collegiate sports tournament fostering camaraderie and competition",
     image:
-      "https://images.unsplash.com/photo-1521412644187-c49fa049e84d?auto=format&fit=crop&w=1600&q=80",
-    buttonLink: "/events/ASM",
+      "https://github.com/Joel-bca/dpe_assests_RR/blob/5966036eea21accd81b56094b73dc75f2971ed7f/beachvolleyball_cover_image.png",
+    buttonLink: "/events/Chavara_cup/register",
     status: "Upcoming",
-    date: "14th November 2025",
+    date: "Jannuary 2026",
     venue: "Chirst University",
   },
 ];
