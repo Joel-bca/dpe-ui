@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
 import RegisterLayout from "@/app/events/Chavara_cup/chavaralayout"; // Using your existing layout
 import { useForm, useFieldArray } from "react-hook-form";
 import { z } from "zod";
@@ -53,10 +54,12 @@ type TeamForm = z.infer<typeof TeamSchema>;
 // --- 3. COMPONENT ---
 
 export default function TeamRegister() {
+  const router = useRouter();
   const steps = ["Team Info", "Captain", "Squad", "Confirm"];
   const [step, setStep] = useState(0);
   const [toast, setToast] = useState<{ msg: string, type: 'success' | 'error' } | null>(null);
   const [submitting, setSubmitting] = useState(false);
+  const [registrationAttempted, setRegistrationAttempted] = useState(false);
 
   const { register, control, handleSubmit, watch, trigger, formState, setValue } = useForm<TeamForm>({
     resolver: zodResolver(TeamSchema),
@@ -100,7 +103,14 @@ export default function TeamRegister() {
   }
 
   async function onSubmit(data: TeamForm) {
+    // Prevent multiple submissions
+    if (submitting || registrationAttempted) {
+      setToast({ msg: "Registration is already in progress. Please wait...", type: "error" });
+      return;
+    }
+
     setSubmitting(true);
+    setRegistrationAttempted(true);
     setToast(null);
 
     try {
@@ -120,12 +130,12 @@ export default function TeamRegister() {
         CaptainPhone: data.captain.phone,
         CaptainEmail: data.captain.email,
         CaptainDOB: data.captain.dob,
-        CaptainID: data.captain.collegeId,
+        CaptainID: data.captain.collegeId, // College ID / Reg No
         
         // Squad Data (Stored as stringified JSON for simplicity in NoSQL)
         Teammates: JSON.stringify(data.members),
         
-        // Safety Keys
+        // Safety Keys for Duplicate Prevention
         DedupKey: dedupKey,
         RegistrationDate: new Date().toISOString(),
       };
@@ -142,21 +152,25 @@ export default function TeamRegister() {
       const result = await response.json();
 
       if (!response.ok) {
-        throw new Error(result.message || "Registration failed");
+        // Handle duplicate entry error specifically
+        if (response.status === 409 || result.message?.includes("already registered")) {
+          throw new Error("This team (phone number) has already been registered. Please use a different captain phone number.");
+        }
+        throw new Error(result.message || "Registration failed. Please try again.");
       }
 
-      setToast({ msg: "Team Registered Successfully! Redirecting...", type: "success" });
+      setToast({ msg: "✓ Team Registered Successfully! Redirecting to home...", type: "success" });
       
-      // Reset form
+      // Redirect to home page after 2 seconds
       setTimeout(() => {
-        // Optional: Redirect logic
-        // router.push('/success');
+        router.push("/");
       }, 2000);
 
     } catch (error: any) {
       console.error("Registration Error:", error);
       setToast({ msg: error.message || "Submission failed. Please try again.", type: "error" });
-    } finally {
+      // Allow user to retry if there's an error
+      setRegistrationAttempted(false);
       setSubmitting(false);
     }
   }
@@ -233,7 +247,7 @@ export default function TeamRegister() {
               </Field>
 
               <Field>
-                <FieldLabel>College Name*</FieldLabel>
+                <FieldLabel>College ID / Reg No *</FieldLabel>
                 <FieldContent>
                   <Input {...register("captain.collegeId")} placeholder="Roll No / Reg No" />
                   <FieldError>{formState.errors.captain?.collegeId?.message}</FieldError>
@@ -340,13 +354,17 @@ export default function TeamRegister() {
 
         {/* FOOTER */}
         <div className="flex justify-between pt-6 border-t border-gray-100">
-          <Button type="button" variant="ghost" onClick={back} disabled={step === 0}>Back</Button>
+          <Button type="button" variant="ghost" onClick={back} disabled={step === 0 || submitting || registrationAttempted}>Back</Button>
           
           {step < steps.length - 1 ? (
-            <Button type="button" onClick={next}>Next Step</Button>
+            <Button type="button" onClick={next} disabled={submitting || registrationAttempted}>Next Step</Button>
           ) : (
-            <Button type="submit" disabled={submitting || !watched.accept} className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white">
-              {submitting ? <><Spinner className="mr-2" /> Registering...</> : "Submit Registration"}
+            <Button 
+              type="submit" 
+              disabled={submitting || !watched.accept || registrationAttempted} 
+              className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white hover:opacity-90 disabled:opacity-50"
+            >
+              {submitting ? <><Spinner className="mr-2" /> Registering...</> : registrationAttempted ? "Registration Complete" : "Submit Registration"}
             </Button>
           )}
         </div>
