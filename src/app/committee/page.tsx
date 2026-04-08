@@ -20,7 +20,7 @@ export default function CommitteePage() {
     <div className="bg-gradient-to-b from-slate-900 via-slate-800 to-black text-white min-h-screen relative">
       {/* ===== HERO SECTION ===== */}
       <section className="relative flex flex-col items-center justify-center h-[90vh] text-center overflow-hidden">
-        <div className="absolute inset-0 bg-[url('/department.jpg')] bg-cover bg-center opacity-05"></div>
+        <div className="absolute inset-0 bg-[url('https://raw.githubusercontent.com/Joel-bca/dpe_assests_RR/ab64c2c647397f68c9c064b20827b0c50eaa9609/department.jpg')] bg-cover bg-center opacity-05"></div>
         <div className="absolute inset-0 bg-gradient-to-b from-black/70 to-black/80"></div>
 
         <motion.div
